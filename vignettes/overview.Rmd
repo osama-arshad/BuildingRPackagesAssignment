@@ -1,0 +1,37 @@
+---
+title: "Overview of Package"
+author: "Osama Arshad"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Overview of Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This package provides users basic functions to read, summarize and visualize [FARS](https://www.nhtsa.gov/Data/Fatality-Analysis-Reporting-System-(FARS)) data. An overview of basic usage is provided below. Refer to the docs for more details.
+
+## Summarize Observations
+
+We can use this package to summarize FARS data. To obtain a count of the number of accidents for each month in certain years we specify the years of interest to the function `fars_summarize_years`. 
+
+```{r }
+BuildingRPackagesAssignment::fars_summarize_years(c(2013, 2014))
+```
+
+## Visualize
+
+Can also obtain a plot of the coordiantes of the accidents in a state for a given year using the function `fars_map_state`.
+
+```{r }
+BuildingRPackagesAssignment::fars_map_state(1, 2013)
+```
+
+
